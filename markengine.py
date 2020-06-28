@@ -10,7 +10,7 @@ def implemented (func, testno) :
 
   code = dis.Bytecode (func)
   for i in code :
-    if (i.argval == 0xdeadbeef) :
+    if (i.argval == 0xABAD1DEA) :
       print ("FAIL: [", testno, "] NOT IMPLEMENTED: ", func.__name__)
       return False
     return True
@@ -42,7 +42,7 @@ def markengine () :
   return (mark (testdata))
 
 
-def mark (data) :
+def mark (data, outof) :
 
   count = 0
   testno = -1
@@ -71,7 +71,6 @@ def mark (data) :
 
   # Print out the score    
   
-  outof = len (data)
   percentage = (count / outof) * 100
   print ("\nScore: ", count, "out of", outof, "= ", str(percentage)+"%" )
   return count
