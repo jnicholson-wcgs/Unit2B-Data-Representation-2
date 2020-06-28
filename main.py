@@ -120,8 +120,12 @@ testdata = [
   (even, 1, 3, False, type(True)), 
   (even, 1, 0, True, type(True)), 
   (even, 1, -2, True, type(True)), 
-  (cat, 2, "Good", "Bye", "Goodbye", (type (""))),
-  (stringn, 2, "Hello", 3, "HelloHelloHello", (type ("")))
+  (cat, 2, "Good", "Bye", "GoodBye", (type (""))),
+  (cat, 2, "Good", "", "Good", (type (""))),
+  (cat, 2, "Good ", "Bye", "Good Bye", (type (""))),
+  (stringn, 2, "Hello ", 3, "Hello Hello Hello ", (type (""))),
+  (stringn, 2, "Hello", 0, "", (type (""))),
+  (stringn, 2, "Hello", -1, "", (type ("")))
   
 ]
 
