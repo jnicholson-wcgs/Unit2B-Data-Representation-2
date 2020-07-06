@@ -94,9 +94,22 @@ def hextobin (str) :
 #
 testdata = [ 
   # function, nargs, arg1, arg2, expected, return type
-    (islower, 1, "a", True, type(True))
-  
-  (hextobin, 1, "A", "1010", (type ("")))
+    (islower, 1, "aB", True, type(True)),
+    (islower, 1, "BB", True, type(True)),
+    (islower, 1, ";", True, type(True)),
+    (isalpha, 1, "aZ", True, type(True)),
+    (isalpha, 1, "9", True, type(True)),
+    (isalpha, 1, "Z", True, type(True)),
+    (isalpha, 1, ";.,", True, type(True)),
+    (tolower, 1, "abc", "abc", type("")),
+    (tolower, 1, "AbC", "abc", type("")),
+    (tolower, 1, "A.B.C", "a.b.c", type("")), 
+    (hexdigittobin, 1, "A", "1010", type("")),
+    (hexdigittobin, 1, "G", "", type("")),
+    (hexdigittobin, 1, "f", "1111", type("")),
+    (hextobin, 1, "A", "1010", (type (""))),
+    (hextobin, 1, "FF", "11111111", (type (""))),
+    (hextobin, 1, "F0F", "111100001111", (type ("")))
   
 ]
 
