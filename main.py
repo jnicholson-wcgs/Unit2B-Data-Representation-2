@@ -20,6 +20,26 @@
 #
 
 #
+# Here is an example using ord() and chr()
+#
+# isdigit()
+# Passed a string. Check the first character of the string to see if it in the range
+# between '0' and '9'
+#
+
+def isdigit (c) :
+    if (ord (c) >= ord ('0') and ord (c) <= ord ('9')) :
+        return True
+    else :
+        return False
+
+# Test out the isdigit() code with boundary cases and error cases
+#
+for c in "09185;aA" :
+    print ("isdigit() of ", c, "is: ", isdigit (c))
+
+        
+#
 # islower() : Function to return Boolean True if the character parameter is lowercase ASCII
 # Parameters:
 # c - string to check the first character of
