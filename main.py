@@ -26,6 +26,8 @@
 # Passed a string. Check the first character of the string to see if it in the range
 # between '0' and '9'
 #
+# Returns True if character is a digit, otherwise False
+#
 
 def isdigit (c) :
     if (ord (c) >= ord ('0') and ord (c) <= ord ('9')) :
