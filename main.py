@@ -7,7 +7,7 @@
 #
 # Three ASCII related functions:
 # islower(c) - return Boolean if the character parameter is a lowercase character
-# isalpha(c) - return Boolean if a character paramater is a alphanumeric character
+# isalpha(c) - return Boolean if a character paramater is a alphabet character
 # tolower(str) - return a string which converts the str parameter to lowercase
 #
 # You may need to use the Python built-in functions ord() and chr()
@@ -45,8 +45,9 @@ for c in "09185;aA" :
 # islower() : Function to return Boolean True if the character parameter is lowercase ASCII
 # Parameters:
 # c - string to check the first character of
-# Return value: integer - the remainder after integer division
-# Example: mod (7, 2) will return 1
+#
+# Return value: True is character is lowercase, False otherwise
+# Example: islower ("a) will return True, islower ("A") and islower (";") return False
 #
 
 def islower (c) :
@@ -57,6 +58,13 @@ def islower (c) :
 # isalpha()
 # 
 # Parameters:
+# c - string to check the first character of
+#
+# Check if the character is lower case or upper case character
+#
+# Return value: True is character passed is upper or lower case, False otherwise
+# Example: isalpha ("f"), isalpha ("F") all return True. isalpha ("8") and isalpha ("@") returns False
+#
 
 #   
 def isalpha (c) :
@@ -64,25 +72,25 @@ def isalpha (c) :
     return 0xABAD1DEA
 
 #
-# tolower() () : 
+# tolower() 
 # Parameters:
-# number - integer to check if odd
+# str - string to convert to lowercase
 # 
-# Return value - Boolean 
-# Example: odd (2) will return False, odd (15) will return True
+# Return value - str parameter converted to lowercase
+# Example: tolower ("hello) will return "hello", tolower ("HeLLo") will return "hello" and tolower ("H.e.L.l.o") will return "h.e.l.l.o"
 #     
 def tolower (str) :
     # Implement your function here
     return 0xABAD1DEA
 
 #
-# hexdigittobin () : function to return the boolean value True if the parameter is even and False if the parameter is odd.
+# hexdigittobin ()
 # 
 # Parameters:
-# number - integer to check if odd
+# c - hexadecimal character to convert to a binary string
 # 
-# Return value - Boolean
-# Example: even (2) will return True, even (15) will return False
+# Return value - binary string representing the hex character. Will return an empty string if character is not a valid hex digit
+# Example: hexdigittobin("A") will return "1100", hexdigittobin ("0") will return "0000", hexdigittobin ("G") will return ""
 #
   
 def hexdigittobin (c) :
@@ -93,11 +101,10 @@ def hexdigittobin (c) :
 # hextobin () : function to concatentate (add together) two strings
 # 
 # Parameters:
-# string1 - first string 
-# string2 - second string
+# str - hexadecimal sting to convert to binary
 # 
-# Return value - a string which is string1 added to string2
-# Example: cat ("Good", "bye") will return "Goodbye"
+# Return value - a string representing the binary number for hex striing
+# Example: hextobin ("00") will return "00000000", hextobin ("AF") will return "11001111"
 #  
 def hextobin (str) :
     # Implement your function here 
@@ -114,15 +121,16 @@ def hextobin (str) :
 #
 # Test data to test the implementation of the functions
 #
+
 testdata = [ 
   # function, nargs, arg1, arg2, expected, return type
-    (islower, 1, "aB", True, type(True)),
-    (islower, 1, "BB", True, type(True)),
-    (islower, 1, ";", True, type(True)),
-    (isalpha, 1, "aZ", True, type(True)),
-    (isalpha, 1, "9", True, type(True)),
+    (islower, 1, "a", True, type(True)),
+    (islower, 1, "B", False, type(True)),
+    (islower, 1, ";", False, type(True)),
+    (isalpha, 1, "a", True, type(True)),
+    (isalpha, 1, "9", False, type(True)),
     (isalpha, 1, "Z", True, type(True)),
-    (isalpha, 1, ";.,", True, type(True)),
+    (isalpha, 1, ";", False, type(True)),
     (tolower, 1, "abc", "abc", type("")),
     (tolower, 1, "AbC", "abc", type("")),
     (tolower, 1, "A.B.C", "a.b.c", type("")), 
@@ -135,7 +143,7 @@ testdata = [
   
 ]
 
-outof = 18
+outof = 16
 import markengine
 
 # Run the markengine
